@@ -1,10 +1,10 @@
 class Account
 
-  attr_accessor :balance, :interest_rate
+  attr_accessor :balance, :interest
 
-  def initialize(balance, interest_rate)
+  def initialize(balance, interest)
     @balance = balance
-    @interest_rate = interest_rate
+    @interest = interest
   end
 
   def deposit(amount)
@@ -15,6 +15,11 @@ class Account
   def withdraw(amount)
     total = balance
     total -= amount
+    "The remaining balance is #{total}"
+  end
+  def gain_interest
+    total = balance
+    total += interest
     "The remaining balance is #{total}"
   end
 
