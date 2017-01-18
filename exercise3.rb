@@ -10,10 +10,10 @@ class Player
   end
 
   def restart
-    gold_coins == 0
-    health_points == 10
-    lives == 5
-    score == 0
+    @gold_coins = 0
+    @health_points = 10
+    @lives = 5
+    @score = 0
   end
 
     def do_battle
@@ -26,15 +26,18 @@ class Player
   end
 
     def level_up
-      lives + 1
+      @lives += 1
+      @score -= 10
     end
 
     def collect_treasure(treasure)
       @gold_coins += treasure
-      if gold_coins >= 10
+      if @gold_coins >= 10
         @score += 1
-        @gold_coins == 0
+        @gold_coins -= 0
+    end
+      level_up if @score == 10
     end
 
-end
+
 end
